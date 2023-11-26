@@ -1,6 +1,6 @@
 import express, { json } from "express";
-import { connect } from "mongoose";
 import cors from "cors";
+import { connect } from "mongoose";
 const app = express();
 import userModel from "./models/user.js";
 import dotenv from "dotenv";
