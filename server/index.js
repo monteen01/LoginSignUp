@@ -61,6 +61,7 @@ app.post("/update-profile", async (req, res) => {
   }
 });
 // post
-app.listen(3001, () => {
-  console.log("serer is running");
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log("SERVER is running");
 });
