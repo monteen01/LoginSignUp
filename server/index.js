@@ -6,7 +6,12 @@ import userModel from "./models/user.js";
 import dotenv from "dotenv";
 dotenv.config();
 // setting the middelware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://main--graceful-liger-e1f61c.netlify.app/",
+    credentials: true,
+  })
+);
 app.use(json());
 // mongoose connecion URI
 const mongoURI = process.env.MONGODB_URI;
