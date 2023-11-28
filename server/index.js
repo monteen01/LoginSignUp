@@ -7,6 +7,8 @@ import dotenv from "dotenv";
 dotenv.config();
 // setting the middelware
 app.use(express.json());
+
+// app.use(cors());
 app.use(
   cors({
     origin: ["https://react-loginform.onrender.com"],
@@ -14,6 +16,7 @@ app.use(
     credentials: true,
   })
 );
+
 // mongoose connecion URI
 const mongoURI = process.env.MONGODB_URI;
 
@@ -66,7 +69,8 @@ app.post("/update-profile", async (req, res) => {
     res.json({ status: "Error updating profile" });
   }
 });
-// post
-app.listen(3001, () => {
+// port
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
   console.log("SERVER is running");
 });
