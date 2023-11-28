@@ -9,7 +9,6 @@ const Login = () => {
   const navigate = useNavigate("");
   // eslint-disable-next-line no-unused-vars
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [result] = useState(null); // Initialize result state
 
   const notify = () => {
     setIsLoggedIn(true);
@@ -28,8 +27,6 @@ const Login = () => {
         const { user, email } = result.data;
         setIsLoggedIn(true);
         console.log(result.data.user.name);
-        // Call the notify function after successful login
-        // notify();
 
         // Navigate to the home route after the toast message is displayed
         setTimeout(() => {
@@ -99,9 +96,9 @@ const Login = () => {
       </form>
       <div className="text-center mt-3">
         <p className="text-gray-500">
-          Already have an account?
+          Dont have an account?
           <span className="text-blue-500 ml-1">
-            <Link to="/register">Sign up</Link>
+            <Link to="/register">Register here</Link>
           </span>
         </p>
       </div>
