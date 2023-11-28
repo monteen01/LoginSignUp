@@ -7,9 +7,13 @@ import dotenv from "dotenv";
 dotenv.config();
 // setting the middelware
 app.use(express.json());
-
-app.use(cors());
-// app.use(json());
+app.use(
+  cors({
+    origin: ["https://main--graceful-liger-e1f61c.netlify.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 // mongoose connecion URI
 const mongoURI = process.env.MONGODB_URI;
 
