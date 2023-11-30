@@ -8,14 +8,14 @@ dotenv.config();
 // setting the middelware
 app.use(express.json());
 
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: ["https://react-loginform.onrender.com"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
+// app.use(cors());
+app.use(
+  cors({
+    origin: ["https://react-loginform.onrender.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // mongoose connecion URI
 const mongoURI = process.env.MONGODB_URI;
@@ -70,7 +70,7 @@ app.post("/update-profile", async (req, res) => {
   }
 });
 // port
-const PORT = 3001;
+const PORT = process.env.BASE_URL;
 app.listen(PORT, () => {
   console.log("SERVER is running");
 });
